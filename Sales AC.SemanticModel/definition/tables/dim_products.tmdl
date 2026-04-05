@@ -1,0 +1,57 @@
+table dim_products
+	lineageTag: 64d6008f-dbfe-4db4-937c-5c459b2f8d31
+
+	column Product_ID
+		dataType: string
+		lineageTag: 5ed613b9-4e76-4bbf-aa13-12919f0b0e19
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 458c1302-4e0c-4de4-b2de-13d1c4723c4a
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 6a7d593e-c7a3-438a-bf11-6dfd469638cb
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: 15dffac1-af94-4611-b1d5-0ee4cae30e10
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_per_Box
+		dataType: double
+		lineageTag: 00addbb2-1957-48ad-bf79-1c1aab907f88
+		summarizeBy: none
+		sourceColumn: Cost_per_Box
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_products = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("LISHA\SQLEXPRESS", "ac", [Query="select * from products"])
+				in
+				    Source
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,80 @@
+table fact_sales
+	lineageTag: 97fea3af-b014-4be0-9049-96c172e21178
+
+	column SP_ID
+		dataType: string
+		lineageTag: 51bc01b2-3831-4e61-a22b-e3094b61b808
+		summarizeBy: none
+		sourceColumn: SP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geo_ID
+		dataType: string
+		lineageTag: b30978d3-8bed-4e41-b5d8-506e2fc64f71
+		summarizeBy: none
+		sourceColumn: Geo_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_ID
+		dataType: string
+		lineageTag: 46780b02-ec1b-4e47-958d-dbf614550243
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 426fb7a4-4076-440b-ac79-e576b576e9c6
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 64395ca3-c94b-4a49-9b62-15ebabadb767
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customers
+		dataType: int64
+		formatString: 0
+		lineageTag: ecfec014-b61f-42c4-a361-0ff7b8e1eba7
+		summarizeBy: sum
+		sourceColumn: Customers
+
+		annotation SummarizationSetBy = Automatic
+
+	column Boxes
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e9e69c1-d709-432d-912a-fdeb7efa2880
+		summarizeBy: sum
+		sourceColumn: Boxes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_sales = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("LISHA\SQLEXPRESS"),
+				    ac = Source{[Name="ac"]}[Data],
+				    dbo_sales = ac{[Schema="dbo",Item="sales"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(dbo_sales,{{"Product", "Product_ID"}, {"Sales_Person", "SP_ID"}, {"Geo", "Geo_ID"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

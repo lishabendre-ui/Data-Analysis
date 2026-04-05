@@ -1,0 +1,50 @@
+table dim_people
+	lineageTag: 4136bd81-14c5-48fb-a54c-2d548ac9bcf1
+
+	column Sales_person
+		dataType: string
+		lineageTag: bf8b605e-f8a4-475e-8348-f3a49201350f
+		summarizeBy: none
+		sourceColumn: Sales_person
+
+		annotation SummarizationSetBy = Automatic
+
+	column SP_ID
+		dataType: string
+		lineageTag: 85f55491-a8f4-44c3-b9ab-65a4f2d366e8
+		summarizeBy: none
+		sourceColumn: SP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: de2b0863-5ab4-499f-b4b1-4a037d21c784
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 0351579f-6347-448f-8a9d-c274c2bc4b91
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_people = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("LISHA\SQLEXPRESS"),
+				    ac = Source{[Name="ac"]}[Data],
+				    dbo_people = ac{[Schema="dbo",Item="people"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_people, each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

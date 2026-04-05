@@ -1,0 +1,41 @@
+table dim_geo
+	lineageTag: 4d63783c-6446-4c80-b2c0-4c34925874ff
+
+	column GeoID
+		dataType: string
+		lineageTag: ce60b30e-e654-463d-87d1-81fb83d758f0
+		summarizeBy: none
+		sourceColumn: GeoID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geo
+		dataType: string
+		lineageTag: 4808fcb3-fc99-4103-ad51-d93069638ab5
+		summarizeBy: none
+		sourceColumn: Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: c8180bd2-e797-4d28-982e-84250e57a833
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_geo = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("LISHA\SQLEXPRESS"),
+				    ac = Source{[Name="ac"]}[Data],
+				    dbo_geo = ac{[Schema="dbo",Item="geo"]}[Data]
+				in
+				    dbo_geo
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,86 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 339
+          },
+          "nodeIndex": "dim_geo",
+          "nodeLineageTag": "4d63783c-6446-4c80-b2c0-4c34925874ff",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 331,
+            "y": 126
+          },
+          "nodeIndex": "dim_people",
+          "nodeLineageTag": "4136bd81-14c5-48fb-a54c-2d548ac9bcf1",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 325,
+            "y": 426
+          },
+          "nodeIndex": "fact_sales",
+          "nodeLineageTag": "97fea3af-b014-4be0-9049-96c172e21178",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 329,
+            "y": 829
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "f0615501-cf08-4b22-966d-aa20fc8700ea",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 615,
+            "y": 393.5
+          },
+          "nodeIndex": "dim_products",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 89.1925905205695,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

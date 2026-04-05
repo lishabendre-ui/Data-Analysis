@@ -1,0 +1,82 @@
+table Date
+	lineageTag: f0615501-cf08-4b22-966d-aa20fc8700ea
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 322c638e-32f0-43e6-84c4-706158383bfe
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year = YEAR([Date])
+		formatString: 0
+		lineageTag: 530bedba-9193-4fc7-a9d8-d9b63e452aef
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName =
+			
+			FORMAT([Date], "MMMM")
+		lineageTag: fcee7312-43bc-40d2-8d54-132416c400dd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = MONTH([Date])
+		formatString: 0
+		lineageTag: d0f42bd4-6628-4e02-be95-10b2b91efe93
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = "Q" & QUARTER([Date])
+		lineageTag: fb96e59e-d0dc-4035-a40d-751c9b8d5f32
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNum = WEEKNUM([Date])
+		formatString: 0
+		lineageTag: cfdbca3a-c2f3-4a9d-8d16-e66778f4dad9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName = FORMAT([Date], "dddd")
+		lineageTag: dbc6581d-0db9-4092-9b51-6058c324abc3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend = IF(WEEKDAY([Date], 2) >= 6, TRUE, FALSE)
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 55c7cd7b-162e-4b46-b4bc-4215444641a3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth = FORMAT([Date], "YYYY-MM")
+		lineageTag: 81cd9364-87de-45ff-b738-d857e8d0a3ee
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_ID = FORMAT([Date], "dddd, DD MMMM YYYY")
+		lineageTag: dd3dec73-8f16-4db3-b6dc-353d54f8ef57
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				CALENDARAUTO()
+
+	annotation PBI_Id = 5305110a5ec645acb989d4606ebbe7ec
+

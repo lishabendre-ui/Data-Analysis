@@ -1,0 +1,16 @@
+relationship 4bd57a26-ac40-9c31-611b-d08466921e45
+	fromColumn: fact_sales.Geo_ID
+	toColumn: dim_geo.GeoID
+
+relationship bf2d94c8-8f19-776b-a61d-5da8c07b44ac
+	fromColumn: fact_sales.SP_ID
+	toColumn: dim_people.SP_ID
+
+relationship 732c437a-c7d7-9786-3205-678da54f8271
+	fromColumn: fact_sales.Date
+	toColumn: Date.Date_ID
+
+relationship AutoDetected_13d21547-0d15-4263-a59b-8f5ac1bd9a5d
+	fromColumn: fact_sales.Product_ID
+	toColumn: dim_products.Product_ID
+
