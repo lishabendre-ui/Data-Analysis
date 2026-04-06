@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 0,
-            "y": 339
+            "y": 402
           },
           "nodeIndex": "dim_geo",
           "nodeLineageTag": "4d63783c-6446-4c80-b2c0-4c34925874ff",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 331,
-            "y": 126
+            "y": 189
           },
           "nodeIndex": "dim_people",
           "nodeLineageTag": "4136bd81-14c5-48fb-a54c-2d548ac9bcf1",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 325,
-            "y": 426
+            "y": 489
           },
           "nodeIndex": "fact_sales",
           "nodeLineageTag": "97fea3af-b014-4be0-9049-96c172e21178",
@@ -49,23 +49,22 @@
         },
         {
           "location": {
-            "x": 329,
-            "y": 829
+            "x": 615,
+            "y": 456.5
           },
-          "nodeIndex": "Date",
-          "nodeLineageTag": "f0615501-cf08-4b22-966d-aa20fc8700ea",
+          "nodeIndex": "dim_products",
           "size": {
             "height": 200,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 0
         },
         {
           "location": {
-            "x": 615,
-            "y": 393.5
+            "x": 331.68830174485538,
+            "y": 788.61532715717635
           },
-          "nodeIndex": "dim_products",
+          "nodeIndex": "Date",
           "size": {
             "height": 200,
             "width": 234

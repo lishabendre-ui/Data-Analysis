@@ -35,6 +35,13 @@ table fact_sales
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: ce85e4dd-d4f3-4bf8-9a1c-08ac7dc53bee
 
+	measure 'Current MTD' =
+			
+			TOTALMTD(
+			    [Total sales],DATESMTD('fact_sales'[Date]))
+		formatString: 0
+		lineageTag: 62e09de3-790a-4cbb-82db-e887c1d636d3
+
 	column SP_ID
 		dataType: string
 		lineageTag: 51bc01b2-3831-4e61-a22b-e3094b61b808

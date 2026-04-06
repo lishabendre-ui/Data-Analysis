@@ -1,0 +1,58 @@
+table Date
+	lineageTag: 0e570718-bc8d-454b-8233-7f542f3e70f0
+
+	column Date
+		formatString: General Date
+		lineageTag: e01495b8-2bf1-43ce-bec0-0d829634b7ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 0a49148f-671d-478f-80b2-7bc4f9841873
+			defaultHierarchy: LocalDateTable_bf670ae5-d0ba-47a1-a493-19b5d89f9a11.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year = Year('Date'[Date])
+		formatString: 0
+		lineageTag: 82805716-a934-4481-b8b7-dae52d5c31a4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = (MONTH('Date'[Date]))
+		formatString: 0
+		lineageTag: 61c7c47b-129e-497e-860a-4fbf3966585f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name' = FORMAT([Date],"MMMM")
+		lineageTag: e3883505-cf42-4543-9f97-c14e19c68623
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = "Q" & QUARTER([Date])
+		lineageTag: cc221ce4-a724-468e-9bc4-674a520ac827
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend = IF(WEEKDAY([Date], 2) >= 6, TRUE, FALSE)
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ab5222c5-e60d-4e4a-8372-67e49a6aa839
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				CALENDARAUTO()
+
+	annotation PBI_Id = 1c5b763c1424478c9dad48f645fca53b
+

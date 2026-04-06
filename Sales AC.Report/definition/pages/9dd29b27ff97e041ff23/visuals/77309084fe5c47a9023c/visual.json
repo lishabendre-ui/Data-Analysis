@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "77309084fe5c47a9023c",
   "position": {
-    "x": 580,
-    "y": 239.28571428571431,
+    "x": 579.06478873239439,
+    "y": 173.07042253521126,
     "z": 1000,
-    "height": 466.42857142857144,
-    "width": 654.28571428571433,
+    "height": 518.49014084507041,
+    "width": 654.78309859154933,
     "tabOrder": 4000
   },
   "visual": {
@@ -130,7 +130,7 @@
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "17.29403567753036D"
+                  "Value": "17.294035677530317D"
                 }
               }
             },
@@ -428,7 +428,7 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'center'"
+                  "Value": "'left'"
                 }
               }
             }
@@ -454,8 +454,115 @@
             }
           }
         }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ba18a41824d7005deb9b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_geo"
+              }
+            },
+            "Property": "Geo"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "2fdb91a63eb8a50eec03",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_geo"
+              }
+            },
+            "Property": "GeoID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "36c4644d8fc83c96549e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_geo"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "92fd825f4ffc52ee1a7f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_sales"
+              }
+            },
+            "Property": "Total sales"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

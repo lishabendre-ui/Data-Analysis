@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "e6ba4277936bbf824465",
   "position": {
-    "x": 306.42857142857093,
-    "y": 20.714285714285687,
+    "x": 322.52394366197086,
+    "y": 20.912676056338029,
     "z": 3003,
-    "height": 191.42857142857144,
-    "width": 287.85714285714289,
-    "tabOrder": 5003
+    "height": 152.15774647887324,
+    "width": 303.77464788732345
   },
   "visual": {
     "visualType": "cardVisual",
@@ -27,7 +26,8 @@
                 }
               },
               "queryRef": "fact_sales.Total sales",
-              "nativeQueryRef": "Total sales"
+              "nativeQueryRef": "Total sales",
+              "format": "\"€\" #,0.00;\"€\" -#,0.00;\"€\" #,0.00"
             }
           ]
         }
