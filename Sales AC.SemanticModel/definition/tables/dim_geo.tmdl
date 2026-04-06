@@ -12,6 +12,7 @@ table dim_geo
 	column Geo
 		dataType: string
 		lineageTag: 4808fcb3-fc99-4103-ad51-d93069638ab5
+		dataCategory: Country
 		summarizeBy: none
 		sourceColumn: Geo
 
@@ -20,6 +21,7 @@ table dim_geo
 	column Region
 		dataType: string
 		lineageTag: c8180bd2-e797-4d28-982e-84250e57a833
+		dataCategory: Country
 		summarizeBy: none
 		sourceColumn: Region
 

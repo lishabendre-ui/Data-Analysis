@@ -1,6 +1,40 @@
 table fact_sales
 	lineageTag: 97fea3af-b014-4be0-9049-96c172e21178
 
+	measure 'Total sales' = ```
+			
+			    sum(fact_sales[Amount])
+			```
+		formatString: 0
+		lineageTag: 8f560647-4fc6-413e-bca0-a0f5bb85b194
+
+	measure 'Total Boxes' = ```
+			
+			     sum(fact_sales[Boxes])
+			```
+		formatString: 0
+		lineageTag: 100bb315-651e-4ee6-942e-6276b910e4fb
+
+	measure 'Shipment Counts' = ```
+			
+			    COUNTROWS(fact_sales)
+			```
+		formatString: 0
+		lineageTag: fe026742-9319-4d1a-a9fd-14f072a1f16c
+
+	measure 'Low box Shipments count' =
+			
+			CALCULATE([Shipment Counts],fact_sales[Boxes]<50)
+		formatString: 0
+		lineageTag: 15a77875-6b34-4d2d-90e1-f199b46388e4
+
+	measure LBS% = ```
+			
+			    DIVIDE([Low box Shipments count],[Shipment Counts])
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ce85e4dd-d4f3-4bf8-9a1c-08ac7dc53bee
+
 	column SP_ID
 		dataType: string
 		lineageTag: 51bc01b2-3831-4e61-a22b-e3094b61b808
@@ -31,6 +65,11 @@ table fact_sales
 		lineageTag: 426fb7a4-4076-440b-ac79-e576b576e9c6
 		summarizeBy: none
 		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: b0ee62bd-b833-4dab-8a4e-c54b5ff3ab26
+			defaultHierarchy: LocalDateTable_6beceea6-f53f-4bf8-9d81-159ee9b8d9fe.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

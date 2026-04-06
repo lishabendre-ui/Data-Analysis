@@ -6,11 +6,12 @@ relationship bf2d94c8-8f19-776b-a61d-5da8c07b44ac
 	fromColumn: fact_sales.SP_ID
 	toColumn: dim_people.SP_ID
 
-relationship 732c437a-c7d7-9786-3205-678da54f8271
-	fromColumn: fact_sales.Date
-	toColumn: Date.Date_ID
-
 relationship AutoDetected_13d21547-0d15-4263-a59b-8f5ac1bd9a5d
 	fromColumn: fact_sales.Product_ID
 	toColumn: dim_products.Product_ID
+
+relationship b0ee62bd-b833-4dab-8a4e-c54b5ff3ab26
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_sales.Date
+	toColumn: LocalDateTable_6beceea6-f53f-4bf8-9d81-159ee9b8d9fe.Date
 
