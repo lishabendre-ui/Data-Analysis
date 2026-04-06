@@ -2,14 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "4da349dd32ff4a5188f9",
   "position": {
-    "x": 15.555555555555555,
-    "y": 535.55555555555554,
-    "z": 6000,
+    "x": 23.571428571428573,
+    "y": 544.28571428571433,
+    "z": 2000,
     "height": 150,
-    "width": 580
+    "width": 167.85714285714286,
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
@@ -26,145 +27,100 @@
                 }
               },
               "queryRef": "dim_products.Category",
-              "nativeQueryRef": "Category"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_sales"
-                    }
-                  },
-                  "Property": "Total Boxes"
-                }
-              },
-              "queryRef": "fact_sales.Total Boxes",
-              "nativeQueryRef": "Total Boxes"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_sales"
-                    }
-                  },
-                  "Property": "Total sales"
-                }
-              },
-              "queryRef": "fact_sales.Total sales",
-              "nativeQueryRef": "Total sales"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_sales"
-                    }
-                  },
-                  "Property": "LBS%"
-                }
-              },
-              "queryRef": "fact_sales.LBS%",
-              "nativeQueryRef": "LBS%"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_sales"
-                    }
-                  },
-                  "Property": "Shipment Counts"
-                }
-              },
-              "queryRef": "fact_sales.Shipment Counts",
-              "nativeQueryRef": "Shipment Counts"
+              "nativeQueryRef": "Category",
+              "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fact_sales"
-                  }
-                },
-                "Property": "Shipment Counts"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {
-      "columnWidth": [
+      "data": [
         {
           "properties": {
-            "value": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "127.16724763766824D"
+                  "Value": "'Basic'"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "fact_sales.Total sales"
           }
-        },
+        }
+      ],
+      "general": [
         {
           "properties": {
-            "value": {
+            "orientation": {
               "expr": {
                 "Literal": {
-                  "Value": "96.80149551762067D"
+                  "Value": "0D"
                 }
               }
-            }
-          },
-          "selector": {
-            "metadata": "fact_sales.Total Boxes"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "87.33333803347496D"
-                }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "dim_products",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Category"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Liquid Choc'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
-          },
-          "selector": {
-            "metadata": "dim_products.Category"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "127.56804755162736D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_sales.LBS%"
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2dd8933763936f019ba3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_products"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

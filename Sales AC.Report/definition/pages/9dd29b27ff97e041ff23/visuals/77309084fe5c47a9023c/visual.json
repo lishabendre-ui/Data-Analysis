@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "77309084fe5c47a9023c",
   "position": {
-    "x": 624.44444444444446,
-    "y": 156.66666666666666,
-    "z": 5000,
-    "height": 502.22222222222223,
-    "width": 592.22222222222217
+    "x": 580,
+    "y": 239.28571428571431,
+    "z": 1000,
+    "height": 466.42857142857144,
+    "width": 654.28571428571433,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "azureMap",
@@ -122,14 +123,14 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "0.46D"
+                  "Value": "0.63D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "17.29403567753033D"
+                  "Value": "17.29403567753036D"
                 }
               }
             },
@@ -420,7 +421,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Sales by Go and Region'"
+                  "Value": "'Total Sales by Geo and Region'"
                 }
               }
             },

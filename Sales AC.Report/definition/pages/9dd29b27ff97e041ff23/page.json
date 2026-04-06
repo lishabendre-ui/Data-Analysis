@@ -5,6 +5,115 @@
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d7fa23395b803ac78dec",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_people"
+              }
+            },
+            "Property": "Sales_person"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "requireSingleSelect": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "51428bd2ea84e3c9e77a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_people"
+              }
+            },
+            "Property": "Sales_person"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dim_people",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Sales_person"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Andria Kimpton'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "f6bba4833dff3748c380",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "fd00cdc953d0eb225db7",
+        "boundFilter": "d7fa23395b803ac78dec",
+        "qnaSingleSelectRequired": true,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_people"
+              }
+            },
+            "Property": "Sales_person"
+          }
+        }
+      }
+    ]
+  },
   "objects": {
     "background": [
       {
@@ -31,87 +140,5 @@
         }
       }
     ]
-  },
-  "visualInteractions": [
-    {
-      "source": "77309084fe5c47a9023c",
-      "target": "f15bfdc81eef5753df5a",
-      "type": "NoFilter"
-    },
-    {
-      "source": "77309084fe5c47a9023c",
-      "target": "f587224eafbe5ce7d465",
-      "type": "NoFilter"
-    },
-    {
-      "source": "77309084fe5c47a9023c",
-      "target": "b670f967704524e988ef",
-      "type": "NoFilter"
-    },
-    {
-      "source": "77309084fe5c47a9023c",
-      "target": "eee0cc733fead942d23e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "660a361f8ca2674a43f6",
-      "target": "f15bfdc81eef5753df5a",
-      "type": "NoFilter"
-    },
-    {
-      "source": "660a361f8ca2674a43f6",
-      "target": "f587224eafbe5ce7d465",
-      "type": "NoFilter"
-    },
-    {
-      "source": "660a361f8ca2674a43f6",
-      "target": "b670f967704524e988ef",
-      "type": "NoFilter"
-    },
-    {
-      "source": "660a361f8ca2674a43f6",
-      "target": "eee0cc733fead942d23e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "4da349dd32ff4a5188f9",
-      "target": "f15bfdc81eef5753df5a",
-      "type": "NoFilter"
-    },
-    {
-      "source": "4da349dd32ff4a5188f9",
-      "target": "f587224eafbe5ce7d465",
-      "type": "NoFilter"
-    },
-    {
-      "source": "4da349dd32ff4a5188f9",
-      "target": "b670f967704524e988ef",
-      "type": "NoFilter"
-    },
-    {
-      "source": "4da349dd32ff4a5188f9",
-      "target": "eee0cc733fead942d23e",
-      "type": "NoFilter"
-    },
-    {
-      "source": "1f57c8048651d2a80745",
-      "target": "f15bfdc81eef5753df5a",
-      "type": "NoFilter"
-    },
-    {
-      "source": "1f57c8048651d2a80745",
-      "target": "f587224eafbe5ce7d465",
-      "type": "NoFilter"
-    },
-    {
-      "source": "1f57c8048651d2a80745",
-      "target": "b670f967704524e988ef",
-      "type": "NoFilter"
-    },
-    {
-      "source": "1f57c8048651d2a80745",
-      "target": "eee0cc733fead942d23e",
-      "type": "NoFilter"
-    }
-  ]
+  }
 }
