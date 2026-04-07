@@ -4,9 +4,10 @@
   "position": {
     "x": 322.52394366197086,
     "y": 20.912676056338029,
-    "z": 3003,
+    "z": 6000,
     "height": 152.15774647887324,
-    "width": 303.77464788732345
+    "width": 303.77464788732345,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -171,23 +172,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "07bfa1c6646a18d66b1e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "Total sales"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

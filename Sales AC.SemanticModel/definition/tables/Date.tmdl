@@ -1,17 +1,14 @@
 table Date
 	lineageTag: 0e570718-bc8d-454b-8233-7f542f3e70f0
+	dataCategory: Time
 
 	column Date
+		isKey
 		formatString: General Date
 		lineageTag: e01495b8-2bf1-43ce-bec0-0d829634b7ff
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
-
-		variation Variation
-			isDefault
-			relationship: 0a49148f-671d-478f-80b2-7bc4f9841873
-			defaultHierarchy: LocalDateTable_bf670ae5-d0ba-47a1-a493-19b5d89f9a11.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

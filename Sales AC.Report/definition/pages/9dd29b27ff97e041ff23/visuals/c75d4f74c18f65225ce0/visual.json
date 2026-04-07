@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "c75d4f74c18f65225ce0",
   "position": {
-    "x": 31.729577464788733,
-    "y": 535.07605633802814,
-    "z": 3005,
-    "height": 155.76338028169013,
-    "width": 181.72394366197184,
-    "tabOrder": 5005
+    "x": 30.833333333333336,
+    "y": 562.5,
+    "z": 8000,
+    "height": 155.83333333333334,
+    "width": 181.66666666666669,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "fact_sales"
                     }
                   },
-                  "Property": "Current MTD"
+                  "Property": "Current QTD"
                 }
               },
-              "queryRef": "fact_sales.Current MTD",
-              "nativeQueryRef": "Current MTD"
+              "queryRef": "fact_sales.Current QTD",
+              "nativeQueryRef": "Current QTD"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "fact_sales"
                   }
                 },
-                "Property": "Current MTD"
+                "Property": "Current QTD"
               }
             },
             "direction": "Descending"
@@ -51,12 +51,76 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "fillCustom": [
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#73A2C4'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "768e40ff28ae31e3bf3f",
+        "name": "c8b25cfbe0018e22f6c8",
         "field": {
           "Measure": {
             "Expression": {
@@ -64,7 +128,7 @@
                 "Entity": "fact_sales"
               }
             },
-            "Property": "Current MTD"
+            "Property": "Current QTD"
           }
         },
         "type": "Advanced"

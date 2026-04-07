@@ -15,8 +15,3 @@ relationship b0ee62bd-b833-4dab-8a4e-c54b5ff3ab26
 	fromColumn: fact_sales.Date
 	toColumn: LocalDateTable_6beceea6-f53f-4bf8-9d81-159ee9b8d9fe.Date
 
-relationship 0a49148f-671d-478f-80b2-7bc4f9841873
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Date.Date
-	toColumn: LocalDateTable_bf670ae5-d0ba-47a1-a493-19b5d89f9a11.Date
-

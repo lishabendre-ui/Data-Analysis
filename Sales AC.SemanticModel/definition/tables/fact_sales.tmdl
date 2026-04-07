@@ -42,6 +42,56 @@ table fact_sales
 		formatString: 0
 		lineageTag: 62e09de3-790a-4cbb-82db-e887c1d636d3
 
+	measure 'Current QTD' = TOTALQTD([Total sales],DATESQTD(fact_sales[Date]))
+		formatString: 0
+		lineageTag: 9739ab71-9af0-4ef7-bef2-ac1e6428a532
+
+	measure 'Current YTD' = ```
+			
+			 TOTALYTD([Total sales], DATESYTD(fact_sales[Date]))
+			```
+		formatString: 0
+		lineageTag: 9dc3dfec-fdbf-4ee7-94bf-7de6cfef6ba5
+
+	measure 'Previous MTD' =
+			
+			CALCULATE([Total sales],
+			    PREVIOUSMONTH(DATESMTD(fact_sales[Date])))
+		formatString: 0
+		lineageTag: 857a7e07-db60-4834-8d81-ce4832a39ed1
+
+	measure 'Previous QTD' =
+			
+			CALCULATE([Total sales],
+			    PREVIOUSQUARTER(DATESMTD(fact_sales[Date])))
+		formatString: 0
+		lineageTag: 18872870-153a-4f1e-b65b-dee490986a21
+
+	measure 'Previous YTD' =
+			
+			CALCULATE([Total sales],
+			    PREVIOUSYEAR(DATESMTD(fact_sales[Date])))
+		formatString: 0
+		lineageTag: c982bf75-6f6c-4fe5-aaeb-02eebe7bf104
+
+	measure 'MOM Growth' =
+			
+			DIVIDE([Current MTD],[Previous MTD])-1
+		formatString: 0%;-0%;0%
+		lineageTag: b58ee8a9-671c-4cc4-834d-b82aaa62edb3
+
+	measure 'QOQ Growth' =
+			
+			DIVIDE([Current QTD],[Previous QTD])-1
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d02b5ecd-d802-45e5-a09b-cfb138dd0711
+
+	measure 'YOY Growth' =
+			
+			DIVIDE([Current YTD],[Previous YTD])-1
+		formatString: 0%;-0%;0%
+		lineageTag: 28678e45-7f8f-4c98-a934-46b696abb659
+
 	column SP_ID
 		dataType: string
 		lineageTag: 51bc01b2-3831-4e61-a22b-e3094b61b808

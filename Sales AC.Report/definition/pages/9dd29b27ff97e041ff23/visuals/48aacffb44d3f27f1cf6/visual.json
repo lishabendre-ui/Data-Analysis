@@ -6,7 +6,8 @@
     "y": 20.912676056338029,
     "z": 3000,
     "height": 152.15774647887324,
-    "width": 303.77464788732345
+    "width": 303.77464788732345,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -170,23 +171,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e34ee335dedfbec96181",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "Total Boxes"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

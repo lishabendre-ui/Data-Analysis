@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 518.49014084507041,
     "width": 654.78309859154933,
-    "tabOrder": 4000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "azureMap",
@@ -130,7 +130,7 @@
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "17.294035677530317D"
+                  "Value": "17.29403567753036D"
                 }
               }
             },
@@ -520,48 +520,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "2fdb91a63eb8a50eec03",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_geo"
-              }
-            },
-            "Property": "GeoID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "36c4644d8fc83c96549e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_geo"
-              }
-            },
-            "Property": "Region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "92fd825f4ffc52ee1a7f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "Total sales"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

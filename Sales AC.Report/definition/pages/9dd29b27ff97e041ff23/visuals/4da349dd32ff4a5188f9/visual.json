@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 145.92399791775117,
     "width": 167.24622592399791,
-    "tabOrder": 3000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -218,7 +218,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "2dd8933763936f019ba3",
+        "name": "0c666ab514cb8303a50e",
         "field": {
           "Column": {
             "Expression": {

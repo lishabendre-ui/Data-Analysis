@@ -4,10 +4,10 @@
   "position": {
     "x": 222.10704225352112,
     "y": 173.07042253521126,
-    "z": 3004,
+    "z": 7000,
     "height": 123.31267605633803,
     "width": 344.69859154929577,
-    "tabOrder": 5004
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -236,23 +236,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b0d22b62eafb81ea576c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

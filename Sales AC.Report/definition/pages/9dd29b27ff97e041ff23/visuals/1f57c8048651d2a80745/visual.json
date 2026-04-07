@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "1f57c8048651d2a80745",
   "position": {
-    "x": 32.450704225352112,
-    "y": 312.24788732394364,
+    "x": 38.333333333333336,
+    "y": 318.33333333333337,
     "z": 0,
-    "height": 222.82816901408449,
-    "width": 534.35492957746476,
-    "tabOrder": 5000
+    "height": 222.5,
+    "width": 534.16666666666674,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "lineChart",
@@ -242,7 +242,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "33a2552287073fe0b7e6",
+        "name": "3fdaa05c6f823c4497e8",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -267,7 +267,7 @@
         "type": "Advanced"
       },
       {
-        "name": "867747bbeb8f46c69cf5",
+        "name": "d2b6fe215285b69cff04",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -292,7 +292,7 @@
         "type": "Categorical"
       },
       {
-        "name": "aff6dd93f14e1d389e77",
+        "name": "ca76a4addb96e0075051",
         "field": {
           "Measure": {
             "Expression": {

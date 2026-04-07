@@ -4,9 +4,10 @@
   "position": {
     "x": 930.07323943662027,
     "y": 20.912676056338029,
-    "z": 3001,
+    "z": 4000,
     "height": 152.15774647887324,
-    "width": 303.77464788732345
+    "width": 303.77464788732345,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -170,23 +171,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cb3c999e47b2a8e14914",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "LBS%"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
