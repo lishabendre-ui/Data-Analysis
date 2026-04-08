@@ -214,23 +214,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0c666ab514cb8303a50e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_products"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

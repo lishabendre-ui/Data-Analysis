@@ -130,7 +130,7 @@
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "17.29403567753036D"
+                  "Value": "17.29403567753033D"
                 }
               }
             },

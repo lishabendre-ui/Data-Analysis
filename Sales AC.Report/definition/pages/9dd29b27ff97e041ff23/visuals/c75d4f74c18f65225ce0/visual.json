@@ -116,23 +116,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c8b25cfbe0018e22f6c8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "Current QTD"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

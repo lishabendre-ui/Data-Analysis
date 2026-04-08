@@ -4,10 +4,10 @@
   "position": {
     "x": 394.16666666666669,
     "y": 562.5,
-    "z": 8002,
+    "z": 10000,
     "height": 155.83333333333334,
     "width": 181.66666666666669,
-    "tabOrder": 8002
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -116,23 +116,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cc8d8f28de21ddf47175",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_sales"
-              }
-            },
-            "Property": "QOQ Growth"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

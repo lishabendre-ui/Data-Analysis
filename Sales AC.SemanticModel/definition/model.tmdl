@@ -16,8 +16,6 @@ ref table dim_geo
 ref table dim_people
 ref table fact_sales
 ref table dim_products
-ref table DateTableTemplate_14cf684d-f1a6-403f-8147-7e712b75f58c
-ref table LocalDateTable_6beceea6-f53f-4bf8-9d81-159ee9b8d9fe
 ref table Date
 
 ref cultureInfo en-US

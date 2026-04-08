@@ -10,8 +10,7 @@ relationship AutoDetected_13d21547-0d15-4263-a59b-8f5ac1bd9a5d
 	fromColumn: fact_sales.Product_ID
 	toColumn: dim_products.Product_ID
 
-relationship b0ee62bd-b833-4dab-8a4e-c54b5ff3ab26
-	joinOnDateBehavior: datePartOnly
+relationship b6b55b25-c869-5dc1-88d3-2e043badfdb9
 	fromColumn: fact_sales.Date
-	toColumn: LocalDateTable_6beceea6-f53f-4bf8-9d81-159ee9b8d9fe.Date
+	toColumn: Date.Date
 

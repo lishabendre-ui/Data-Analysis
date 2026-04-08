@@ -15,14 +15,14 @@ table Date
 	column Year = Year('Date'[Date])
 		formatString: 0
 		lineageTag: 82805716-a934-4481-b8b7-dae52d5c31a4
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
 	column Month = (MONTH('Date'[Date]))
 		formatString: 0
 		lineageTag: 61c7c47b-129e-497e-860a-4fbf3966585f
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -41,6 +41,13 @@ table Date
 	column IsWeekend = IF(WEEKDAY([Date], 2) >= 6, TRUE, FALSE)
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: ab5222c5-e60d-4e4a-8372-67e49a6aa839
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Sales' = [Total sales]
+		formatString: 0
+		lineageTag: d4426c3a-a3d5-4890-9415-84322ebd679b
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic

@@ -17,54 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "fact_sales"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "fact_sales"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Date"
                 }
               },
               "queryRef": "fact_sales.Date.Variation.Date Hierarchy.Year",
               "nativeQueryRef": "Date Year",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "fact_sales"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "fact_sales.Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Date Month",
               "active": true
             }
           ]
@@ -242,57 +205,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3fdaa05c6f823c4497e8",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "fact_sales"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
-              }
-            },
-            "Level": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "d2b6fe215285b69cff04",
         "field": {
-          "HierarchyLevel": {
+          "Column": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "fact_sales"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
+              "SourceRef": {
+                "Entity": "fact_sales"
               }
             },
-            "Level": "Month"
+            "Property": "Date"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "ca76a4addb96e0075051",
+        "name": "2e856c688c35834dce5b",
         "field": {
           "Measure": {
             "Expression": {

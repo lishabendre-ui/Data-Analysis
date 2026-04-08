@@ -6,6 +6,7 @@ table fact_sales
 			    sum(fact_sales[Amount])
 			```
 		formatString: 0
+		displayFolder: Measures
 		lineageTag: 8f560647-4fc6-413e-bca0-a0f5bb85b194
 
 	measure 'Total Boxes' = ```
@@ -13,6 +14,7 @@ table fact_sales
 			     sum(fact_sales[Boxes])
 			```
 		formatString: 0
+		displayFolder: Measures
 		lineageTag: 100bb315-651e-4ee6-942e-6276b910e4fb
 
 	measure 'Shipment Counts' = ```
@@ -20,12 +22,14 @@ table fact_sales
 			    COUNTROWS(fact_sales)
 			```
 		formatString: 0
+		displayFolder: Measures
 		lineageTag: fe026742-9319-4d1a-a9fd-14f072a1f16c
 
 	measure 'Low box Shipments count' =
 			
 			CALCULATE([Shipment Counts],fact_sales[Boxes]<50)
 		formatString: 0
+		displayFolder: Measures
 		lineageTag: 15a77875-6b34-4d2d-90e1-f199b46388e4
 
 	measure LBS% = ```
@@ -33,6 +37,7 @@ table fact_sales
 			    DIVIDE([Low box Shipments count],[Shipment Counts])
 			```
 		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Measures
 		lineageTag: ce85e4dd-d4f3-4bf8-9a1c-08ac7dc53bee
 
 	measure 'Current MTD' =
@@ -40,10 +45,12 @@ table fact_sales
 			TOTALMTD(
 			    [Total sales],DATESMTD('fact_sales'[Date]))
 		formatString: 0
+		displayFolder: Time Intelligence
 		lineageTag: 62e09de3-790a-4cbb-82db-e887c1d636d3
 
 	measure 'Current QTD' = TOTALQTD([Total sales],DATESQTD(fact_sales[Date]))
 		formatString: 0
+		displayFolder: Time Intelligence
 		lineageTag: 9739ab71-9af0-4ef7-bef2-ac1e6428a532
 
 	measure 'Current YTD' = ```
@@ -51,6 +58,7 @@ table fact_sales
 			 TOTALYTD([Total sales], DATESYTD(fact_sales[Date]))
 			```
 		formatString: 0
+		displayFolder: Time Intelligence
 		lineageTag: 9dc3dfec-fdbf-4ee7-94bf-7de6cfef6ba5
 
 	measure 'Previous MTD' =
@@ -58,6 +66,7 @@ table fact_sales
 			CALCULATE([Total sales],
 			    PREVIOUSMONTH(DATESMTD(fact_sales[Date])))
 		formatString: 0
+		displayFolder: Time Intelligence
 		lineageTag: 857a7e07-db60-4834-8d81-ce4832a39ed1
 
 	measure 'Previous QTD' =
@@ -65,6 +74,7 @@ table fact_sales
 			CALCULATE([Total sales],
 			    PREVIOUSQUARTER(DATESMTD(fact_sales[Date])))
 		formatString: 0
+		displayFolder: Time Intelligence
 		lineageTag: 18872870-153a-4f1e-b65b-dee490986a21
 
 	measure 'Previous YTD' =
@@ -72,24 +82,28 @@ table fact_sales
 			CALCULATE([Total sales],
 			    PREVIOUSYEAR(DATESMTD(fact_sales[Date])))
 		formatString: 0
+		displayFolder: Time Intelligence
 		lineageTag: c982bf75-6f6c-4fe5-aaeb-02eebe7bf104
 
 	measure 'MOM Growth' =
 			
 			DIVIDE([Current MTD],[Previous MTD])-1
 		formatString: 0%;-0%;0%
+		displayFolder: Time Intelligence
 		lineageTag: b58ee8a9-671c-4cc4-834d-b82aaa62edb3
 
 	measure 'QOQ Growth' =
 			
 			DIVIDE([Current QTD],[Previous QTD])-1
 		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time Intelligence
 		lineageTag: d02b5ecd-d802-45e5-a09b-cfb138dd0711
 
 	measure 'YOY Growth' =
 			
 			DIVIDE([Current YTD],[Previous YTD])-1
 		formatString: 0%;-0%;0%
+		displayFolder: Time Intelligence
 		lineageTag: 28678e45-7f8f-4c98-a934-46b696abb659
 
 	column SP_ID
@@ -122,11 +136,6 @@ table fact_sales
 		lineageTag: 426fb7a4-4076-440b-ac79-e576b576e9c6
 		summarizeBy: none
 		sourceColumn: Date
-
-		variation Variation
-			isDefault
-			relationship: b0ee62bd-b833-4dab-8a4e-c54b5ff3ab26
-			defaultHierarchy: LocalDateTable_6beceea6-f53f-4bf8-9d81-159ee9b8d9fe.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
