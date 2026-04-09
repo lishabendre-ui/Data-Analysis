@@ -10,7 +10,7 @@ relationship AutoDetected_13d21547-0d15-4263-a59b-8f5ac1bd9a5d
 	fromColumn: fact_sales.Product_ID
 	toColumn: dim_products.Product_ID
 
-relationship b6b55b25-c869-5dc1-88d3-2e043badfdb9
+relationship f577bc15-ddfa-3831-b9c3-3ee8c4864314
 	fromColumn: fact_sales.Date
-	toColumn: Date.Date
+	toColumn: Calender.Date
 

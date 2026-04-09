@@ -520,6 +520,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "81d409e004795fb43c12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_geo"
+              }
+            },
+            "Property": "GeoID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ce417965840ce631f7ed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_geo"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "43580ac8b9235d212d8c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_sales"
+              }
+            },
+            "Property": "Total sales"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

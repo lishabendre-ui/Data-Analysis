@@ -5,13 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 756.7893207949063
       },
       "nodes": [
         {
           "location": {
             "x": 0,
-            "y": 402
+            "y": 1648.21875
           },
           "nodeIndex": "dim_geo",
           "nodeLineageTag": "4d63783c-6446-4c80-b2c0-4c34925874ff",
@@ -19,12 +19,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
             "x": 331,
-            "y": 189
+            "y": 1435.21875
           },
           "nodeIndex": "dim_people",
           "nodeLineageTag": "4136bd81-14c5-48fb-a54c-2d548ac9bcf1",
@@ -32,12 +32,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 3
         },
         {
           "location": {
             "x": 325,
-            "y": 489
+            "y": 1735.21875
           },
           "nodeIndex": "fact_sales",
           "nodeLineageTag": "97fea3af-b014-4be0-9049-96c172e21178",
@@ -50,30 +50,44 @@
         {
           "location": {
             "x": 615,
-            "y": 456.5
+            "y": 1702.71875
           },
           "nodeIndex": "dim_products",
           "size": {
             "height": 200,
             "width": 234
           },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 779.03487803695555,
+            "y": 1318.8334736858446
+          },
+          "nodeIndex": "Calender",
+          "nodeLineageTag": "5d8804e0-1caf-4f74-bf94-22c3a77a84ca",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 331.68830174485538,
-            "y": 788.61532715717635
+            "x": 1415.0820583771044,
+            "y": 1236.9881101035808
           },
-          "nodeIndex": "Date",
+          "nodeIndex": "DateAutoTemplate",
+          "nodeLineageTag": "5e362206-55d4-45e3-ad3d-490cfd9556a6",
           "size": {
-            "height": 200,
+            "height": 300,
             "width": 234
           },
           "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 89.1925905205695,
+      "zoomValue": 89.19259052056951,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

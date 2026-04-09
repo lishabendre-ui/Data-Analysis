@@ -1,0 +1,160 @@
+table Calender
+	lineageTag: 5d8804e0-1caf-4f74-bf94-22c3a77a84ca
+	dataCategory: Time
+
+	measure _ShowValueForDates =
+			
+			VAR __LastDateWithData =
+			    CALCULATE (
+			        MAXX ( { MAX ( 'fact_sales'[Date] ) }, ''[Value] ),
+			        REMOVEFILTERS ()
+			    )
+			VAR __FirstDateVisible =
+			    MIN ( 'Calender'[Date] )
+			VAR __Result =
+			    __FirstDateVisible <= __LastDateWithData
+			RETURN
+			    __Result
+		isHidden
+		displayFolder: Hidden Time Intelligence
+		lineageTag: 43b1f8a7-adfb-4d9c-9a8f-33673e8218d4
+
+		annotation SQLBI_Template = TimeIntelligence
+
+		annotation SQLBI_TimeIntelligence = Standard
+
+		annotation SQLBI_CalendarType = Calendar
+
+	column Date
+		isKey
+		formatString: m/d/yyyy
+		lineageTag: 7834204c-5e56-4690-bc7a-c3a9360928be
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Date]
+
+		annotation SQLBI_AttributeTypes = Date
+
+	column Year
+		lineageTag: a614999e-72ab-40d5-8899-476541111f31
+		dataCategory: Years
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Year]
+
+	column 'Year Quarter Number'
+		isHidden
+		lineageTag: 3cf5fdb7-09c5-4152-8d59-1bff75734db8
+		dataCategory: Quarters
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Year Quarter Number]
+
+	column 'Year Quarter'
+		lineageTag: afa2d2f1-ff98-495b-b802-d05c57ced344
+		dataCategory: Quarters
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Year Quarter]
+		sortByColumn: 'Year Quarter Number'
+
+	column Quarter
+		lineageTag: fd69a883-5f87-43f7-9a96-a5d610c1e56d
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Quarter]
+
+	column 'Year Month'
+		lineageTag: 01e7d944-3a4f-4535-a9c8-8b5c8b6d5397
+		dataCategory: Months
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Year Month]
+		sortByColumn: 'Year Month Number'
+
+	column 'Year Month Number'
+		isHidden
+		lineageTag: bd2a9216-46e3-4972-bc96-f56d72cd17d3
+		dataCategory: Months
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Year Month Number]
+
+	column Month
+		lineageTag: c5a918a7-02e4-4999-b719-2a98286ba4f6
+		dataCategory: MonthOfYear
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Month]
+		sortByColumn: 'Month Number'
+
+	column 'Month Number'
+		isHidden
+		lineageTag: d77e3863-5fde-4031-b0b8-526e668893f1
+		dataCategory: MonthOfYear
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Month Number]
+
+	column 'Day of Week Number'
+		isHidden
+		lineageTag: 7fecf282-6282-4a9a-899b-93fa94308804
+		dataCategory: DayOfWeek
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Day of Week Number]
+
+		annotation SQLBI_AttributeTypes = DayOfWeek
+
+		annotation SQLBI_FilterSafe = True
+
+	column 'Day of Week'
+		lineageTag: a8997127-6868-40aa-81b1-4279153d9256
+		dataCategory: DayOfWeek
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[Day of Week]
+		sortByColumn: 'Day of Week Number'
+
+		annotation SQLBI_FilterSafe = True
+
+	column DateWithTransactions
+		isHidden
+		lineageTag: a6b9a0c1-68b7-4c73-a10a-212170955c6f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DateAutoTemplate[DateWithTransactions]
+
+		annotation SQLBI_AttributeTypes = DateDuration
+
+	hierarchy Calendar
+		lineageTag: eeb9b6fc-b15a-4e30-a40c-165d64b81812
+
+		level Year
+			lineageTag: 2d15406f-0980-4a7e-a13c-2f50bac19d52
+			column: Year
+
+		level Month
+			lineageTag: a58af9bb-068d-4fa6-9625-03293b488e12
+			column: 'Year Month'
+
+		level Quarter
+			lineageTag: 024d6e21-a602-4133-9b87-47fa6671598b
+			column: Quarter
+
+		level Date
+			lineageTag: 3e61c35c-c49a-492b-8157-9f6e73afea17
+			column: Date
+
+	partition Calender = calculated
+		mode: import
+		source = DateAutoTemplate
+
+	annotation SQLBI_Template = Dates
+
+	annotation SQLBI_TemplateTable = Date
+
+	annotation SQLBI_CalendarType = Calendar
+

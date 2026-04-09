@@ -6,7 +6,39 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+extendedProperty SQLBI_BRAVO_ManageDatesConfiguration =
+		{
+		  "templateUri": "file:///C:/Users/anike/AppData/Local/Bravo/.temp/ManageDates/Templates/Config-01.template.json",
+		  "isCurrent": false,
+		  "isCustom": false,
+		  "name": "Config-01",
+		  "description": "Standard gregorian calendar",
+		  "autoScan": 127,
+		  "onlyTablesColumns": [],
+		  "exceptTablesColumns": [],
+		  "isoCountry": "US",
+		  "autoNaming": 1,
+		  "targetMeasures": [],
+		  "defaults": {
+		    "firstDayOfWeek": 1
+		  },
+		  "dateAvailable": true,
+		  "dateEnabled": true,
+		  "dateTableName": "Calender",
+		  "dateTableValidation": 1,
+		  "dateReferenceTableName": "DateAutoTemplate",
+		  "dateReferenceTableValidation": 1,
+		  "holidaysAvailable": true,
+		  "holidaysEnabled": false,
+		  "holidaysTableName": "Holidays",
+		  "holidaysTableValidation": 1,
+		  "holidaysDefinitionTableName": "HolidaysDefinition",
+		  "holidaysDefinitionTableValidation": 1,
+		  "timeIntelligenceAvailable": true,
+		  "timeIntelligenceEnabled": true
+		}
+
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_QueryOrder = ["dim_geo","dim_people","fact_sales","dim_products"]
 
@@ -16,7 +48,8 @@ ref table dim_geo
 ref table dim_people
 ref table fact_sales
 ref table dim_products
-ref table Date
+ref table DateAutoTemplate
+ref table Calender
 
 ref cultureInfo en-US
 
